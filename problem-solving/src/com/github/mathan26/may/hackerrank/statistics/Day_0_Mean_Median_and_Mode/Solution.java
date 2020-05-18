@@ -27,9 +27,7 @@ public class Solution {
 		
 		//Calculate the Mean
 		double mean = (double) total/size;
-		System.out.println(mean);
-		
-		
+
 		//Calculate the Meadian
 		double median;
 		if(size % 2==0) {
@@ -37,10 +35,7 @@ public class Solution {
 		}else {
 			median =(array[size/2])/2.0;
 		}
-		
-		System.out.println(median);
-		
-		  /* Calculate Mode - if there's a tie, choose the smaller number */
+		/* Calculate Mode - if there's a tie, choose the smaller number */
         HashMap<Integer, Integer> map = new HashMap();
         int maxOccurrences = 0;
         int mode = Integer.MAX_VALUE;
