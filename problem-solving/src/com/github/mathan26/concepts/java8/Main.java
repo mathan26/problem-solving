@@ -1,9 +1,7 @@
 package com.github.mathan26.concepts.java8;
 
 import java.util.*;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
+import java.util.function.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -116,5 +114,80 @@ public class Main {
         list.sort((str1,str2)->str1.length()-str2.length());
         System.out.println(list); //[I, you, too, Love]
 
+//        Requirements: Suppose there is a number to the Map corresponding to English words,
+//        please output all the mapping relationships in the Map.
+        HashMap<Integer,String> map = new HashMap<>();
+        map.put(1,"one");
+        map.put(2,"two");
+        map.put(3,"three");
+
+        //java 7
+        for(Map.Entry<Integer,String> entry:map.entrySet()){
+            System.out.println("key: "+entry.getKey()+" value: "+entry.getValue());
+        }
+
+        //anonymous
+        map.forEach(new BiConsumer<Integer, String>() {
+            @Override
+            public void accept(Integer integer, String s) {
+                System.out.println("key :"+integer+" value: "+s);
+            }
+        });
+
+        //Lamda
+        map.forEach((key,value)-> System.out.println("key :"+key+" value: "+value));
+       /* key :1 value: one
+        key :2 value: two
+        key :3 value: three*/
+
+//        Demand; Suppose there is a number to the Map corresponding to English words,
+//        output 4 corresponding to English words, if there is no output NoValue
+
+        //java 7
+        if(map.containsKey("4"))
+            System.out.println(map.get(4));
+        else
+            System.out.println("No value");
+
+        //Lamda
+        System.out.println(map.getOrDefault("4","No Value"));//No Value
+
+        //Requirements: Assuming there is a number to the Map corresponding to English words,
+        // please convert all the words in the original mapping relationship to uppercase.
+
+//        java 7
+        for(Map.Entry<Integer,String> entry:map.entrySet()){
+            entry.setValue(entry.getValue().toUpperCase());
+        }
+        System.out.println(map);//{1=ONE, 2=TWO, 3=THREE}
+
+        map.put(1,"one");
+        map.put(2,"two");
+        map.put(3,"three");
+        //anonymous
+        map.replaceAll(new BiFunction<Integer, String, String>() {
+            @Override
+            public String apply(Integer key, String value) {
+                return value.toUpperCase();
+            }
+        });
+        System.out.println(map);
+
+        map.put(1,"one");
+        map.put(2,"two");
+        map.put(3,"three");
+        //lamda
+        map.replaceAll((k,v)->v.toUpperCase());
+        System.out.println(map);
+
+        //merge method
+
+        map.merge(10,"newvalue",(v1,v2)->v1+"oldvalue");
+        System.out.println(map);//{1=ONE, 2=TWO, 3=THREE, 10=newvalue}
+        map.merge(1,"newvalue",(v1,v2)->v1+"oldvalue");//{1=ONEoldvalue, 2=TWO, 3=THREE, 10=newvalue}
+        System.out.println(map);
+
     }
 }
+
+
