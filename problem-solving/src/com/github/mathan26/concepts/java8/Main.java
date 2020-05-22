@@ -2,6 +2,7 @@ package com.github.mathan26.concepts.java8;
 
 import java.util.*;
 import java.util.function.*;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -202,6 +203,38 @@ public class Main {
         map.computeIfPresent(101,(k,v)->v+" computeIfPresent example");
         System.out.println(map);
         //{1=ONEoldvalue, 2=TWO, 3=THREE, 101=This key does't exist before computeIfPresent example, 10=newvalue message}
+
+
+        // ############################ STREAM()  ######################################
+
+
+
+        //forEach()
+        Stream<String> stream = Stream.of("I","Love","You","too");
+        stream.filter(str->str.length()>3).forEach(str-> System.out.println(str));//Love
+
+
+        //TO SOLVE Stream has already been operated upon or closed EXCEPTION USE with Supplier Class
+        //distinct()stream = Stream.of("I","Love","You","too");
+        Supplier<Stream<String>> stream2=() -> Stream.of("I", "love", "you", "too", "too");
+
+        stream2.get().distinct().forEach(str-> System.out.print(str + " ")); //I love you too
+
+        //sort and custom sort
+        stream2.get().sorted((str1,str2)->str1.length()-str2.length()).forEach(str-> System.out.print(str+"->"));
+
+
+        //  stream2 = ()->Stream.of("I","Love","You","too");
+        System.out.println();
+        //map method
+        stream2.get().map(s -> s.toUpperCase()).forEach(s -> System.out.println(s));
+
+        Stream<List<Integer>> stream3 = Stream.of(Arrays.asList(1,2), Arrays.asList(3, 4, 5));
+
+        //flatMap -
+        // joins the list of integers and stream the list
+        stream3.flatMap(list2 -> list2.stream())
+                .forEach(i -> System.out.println(i));
     }
 }
 
