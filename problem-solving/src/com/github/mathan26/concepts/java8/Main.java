@@ -187,6 +187,21 @@ public class Main {
         map.merge(1,"newvalue",(v1,v2)->v1+"oldvalue");//{1=ONEoldvalue, 2=TWO, 3=THREE, 10=newvalue}
         System.out.println(map);
 
+        //compute method
+        map.compute(10,(k,v)->v.concat(" message"));
+        System.out.println(map.get(10));//newvalue message
+        System.out.println(map);
+        //computeIfAbsent methos
+        map.computeIfAbsent(10,k->"computeIfAbsent() "+"Example");
+        System.out.println(map);//{1=ONEoldvalue, 2=TWO, 3=THREE, 10=newvalue message}  //No changes since the key is exist
+        map.computeIfAbsent(101,k->"This key does't exist before");
+        System.out.println(map);//This key does't exist before
+        //{1=ONEoldvalue, 2=TWO, 3=THREE, 101=This key does't exist before, 10=newvalue message}
+
+
+        map.computeIfPresent(101,(k,v)->v+" computeIfPresent example");
+        System.out.println(map);
+        //{1=ONEoldvalue, 2=TWO, 3=THREE, 101=This key does't exist before computeIfPresent example, 10=newvalue message}
     }
 }
 
