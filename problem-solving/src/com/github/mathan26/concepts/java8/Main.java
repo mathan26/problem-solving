@@ -2,6 +2,7 @@ package com.github.mathan26.concepts.java8;
 
 import java.util.*;
 import java.util.function.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -235,6 +236,42 @@ public class Main {
         // joins the list of integers and stream the list
         stream3.flatMap(list2 -> list2.stream())
                 .forEach(i -> System.out.println(i));
+
+
+        //reduce method
+        //Need: Find the longest word from a group of words . The meaning of "big" here is "long".
+        Stream<String>  streamObj =Stream.of("I","Love","You","too");
+        Optional<String> longest = streamObj.reduce((s1,s2)->s1.length()>=s2.length()?s1:s2);
+        System.out.println(longest.get());//Love
+
+//        Requirements: Find the sum of the length of a group of words .
+//        This is a "summation" operation, the input type of the operation object is String , and the result type is Integer .
+        Stream<String>  streamObj2 =Stream.of("I","Love","You","too");
+
+        Integer lengthSum = streamObj2.reduce(0,(sum,str)->sum+str.length(),(a,b)->a+b);
+//        Integer usingMapLengthSum= streamObj2.mapToInt(str->str.length()).sum();
+        System.out.println(lengthSum);//11
+
+//        The ultimate weapon collect ()
+
+        Stream<String>  streamObj3 =Stream.of("I","Love","You","too");
+//        List<String > listStream = streamObj3.collect(Collectors.toList());
+//        System.out.println(listStream);//[I, Love, You, too]
+//        Set<String> set = streamObj3.collect(Collectors.toSet());
+//        System.out.println(set);
+            Map<String,Integer> mapStream=streamObj3.collect(Collectors.toMap(Function.identity(),String::length));
+        System.out.println(mapStream);//{too=3, Love=4, I=1, You=3}
+
+//        Static and default methods of the interface
+//        Function.identity() it return the type of input  static method identity
+
+
+        //collectors.toMap() more example
+        List<Book> bookList = new ArrayList<>();
+        bookList.add(new Book("The Fellowship of the Ring", 1954, "0395489318"));
+        bookList.add(new Book("The Two Towers", 1954, "0345339711"));
+        bookList.add(new Book("The Return of the King", 1955, "0618129111"));
+        System.out.println(Book.listToMap(bookList));
     }
 }
 
