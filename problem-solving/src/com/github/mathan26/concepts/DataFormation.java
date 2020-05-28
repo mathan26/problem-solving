@@ -3,6 +3,7 @@ package com.github.mathan26.concepts;
 import java.util.*;
 
 public class DataFormation {
+    protected static List<Map<String,String>> copyList;
     public static void main(String[] args) {
         int detailRecordCount=0;
         int rankRangeLength=0;
@@ -48,13 +49,14 @@ public class DataFormation {
                 checkCount +=intialCount;
                 index++;
             }
-            rankList.get(i).putIfAbsent("autono",detailList.get(index).get("autono"));
+            rankList.get(i).put("autono",detailList.get(index).get("autono"));
 
         }
 
         //new RankRecord
+        copyList=rankList;
         System.out.println("\n---UPDATED rankRecord data---");
-      rankList.stream().forEach(stringStringMap -> System.out.println(stringStringMap));
+        copyList.stream().forEach(stringStringMap -> System.out.println(stringStringMap));
       //  rankList.stream().forEach(map->(map).forEach((k,v)-> System.out.println(("key "+k+" value"+v))));
     }
 }

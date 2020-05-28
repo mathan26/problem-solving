@@ -272,6 +272,18 @@ public class Main {
         bookList.add(new Book("The Two Towers", 1954, "0345339711"));
         bookList.add(new Book("The Return of the King", 1955, "0618129111"));
         System.out.println(Book.listToMap(bookList));
+
+//        Collectors.partitioningBy()
+
+        Stream<Integer> s =Stream.of(1,2,3,4,5,6,7,8,9,10);
+        Map<Boolean,List<Integer>> mapData1=s.collect(Collectors.partitioningBy(num ->num > 3));
+        System.out.println("Elements in map after partitioning "+mapData1);
+
+//        Collectors.groupingBy()
+
+        List<String> g=Arrays.asList("Mathan","kumar","Mathan");
+        Map<String,Long> mapData2 = g.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        System.out.println("After grouping result "+mapData2);
     }
 }
 
