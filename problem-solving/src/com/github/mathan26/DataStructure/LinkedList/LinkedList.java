@@ -7,7 +7,7 @@ class LinkedList
     Node head; // head of list
 
     /* Linked list Node*/
-    class Node
+    static class Node
     {
         int data;
         Node next;
