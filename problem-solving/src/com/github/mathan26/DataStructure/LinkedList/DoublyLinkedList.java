@@ -26,12 +26,12 @@ public class DoublyLinkedList {
         obj.addDataToFront();
         obj.addDataToFront();
         obj.addDataToFront();
-      //  obj.addDataAtEnd();
-      //  obj.afterGivenNode();
+        obj.addDataAtEnd();
+        obj.afterGivenNode();
         obj.printList();
-      //  obj.delAtFront();
+        obj.delAtFront();
         obj.printList();
-      //  obj.delAtLast();
+        obj.delAtLast();
         obj.printList();
         obj.deleteAtMiddle();
         obj.printList();
