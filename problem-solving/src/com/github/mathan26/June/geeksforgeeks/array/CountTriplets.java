@@ -27,7 +27,7 @@ public class CountTriplets {
         int t=0;
         for(int i=n-1; i>=0; i--){
             int start=0;
-            int end=n-1;
+            int end=i-1;
             while (start<end){
                 int sum=arr[start] + arr[end];
                 if(arr[i]==sum){
