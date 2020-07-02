@@ -30,6 +30,13 @@ public class BinarySearchTreeImpl {
         System.out.println("Enter the element to search");
         int data= input.nextInt();
         search(root,data);
+        System.out.println(findHeight(root));
+    }
+
+    private static int findHeight(Node root) {
+        if(root==null)
+            return -1;
+        return Math.max(findHeight(root.left),findHeight(root.right)) + 1;
     }
 
     private static void search(Node root,int data) {
