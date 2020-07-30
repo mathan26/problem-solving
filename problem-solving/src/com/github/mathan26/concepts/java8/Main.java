@@ -212,7 +212,10 @@ public class Main {
 
         //forEach()
         Stream<String> stream = Stream.of("I","Love","You","too");
-        stream.filter(str->str.length()>3).forEach(str-> System.out.println(str));//Love
+        stream.filter(str->str.length()>3).forEach(str-> System.out.println(str));//Love\
+
+
+
 
 
         //TO SOLVE Stream has already been operated upon or closed EXCEPTION USE with Supplier Class
