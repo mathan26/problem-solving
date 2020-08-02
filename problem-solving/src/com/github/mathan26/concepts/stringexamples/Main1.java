@@ -23,5 +23,12 @@ public class Main1 {
         FinalClass finalClass = new FinalClass("Mathan");
         // finalClass.finalName="Modified"; // Cannot assign a value to final variable 'finalName'
         //If you don't want visibility declare the name with private
+
+
+        char[] c = new char[26];
+        c[1]='b'-'a';
+        String s=String.valueOf(c);
+        System.out.println('b'-'a');
+        System.out.println("String.valueOf(c) "+s);
     }
 }
