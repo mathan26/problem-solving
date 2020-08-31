@@ -15,6 +15,7 @@ public class ContigousArrayBinarynos {
                     if(longestSubArray < i + 1)
                         longestSubArray = i + 1;
                 }else if(map.containsKey(sum)){ // contains should be checked second
+                                                // Because if between is same sum there is a sub array present
                     if(longestSubArray < i - map.get(sum))
                         longestSubArray =  i - map.get(sum);
                 }else{
