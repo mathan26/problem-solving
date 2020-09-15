@@ -62,7 +62,7 @@ class LinkedList
 			new node as head */
         if (head == null)
         {
-            head = new Node(new_data);
+            head = new_node;
             return;
         }
 
