@@ -17,7 +17,7 @@ public class A {
             return false;
         // type casting of the argument.
         A geek = (A) obj;
-        return (geek.name == this.name && geek.id == this.id);
+        return (geek.name.equals(this.name) && geek.id == this.id);
     }
 
     @Override
