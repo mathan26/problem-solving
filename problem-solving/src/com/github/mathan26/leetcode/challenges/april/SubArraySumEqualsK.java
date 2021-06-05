@@ -6,11 +6,13 @@ import java.util.Map;
 
 public class SubArraySumEqualsK {
     public static void main(String[] args) {
-        int[] array={3,4,7,2,-3,1,4,2,2,2,3};
-        int k=7;
-        bruteForce(array,k);  // O(n2)
-        prefixSum(array,k);     // O(nlogn)
-        efficientSolutionUsingHashMap(array,k);
+//        int[] array={3,4,7,2,-3,1,4,2,2,2,3};
+//        int k=7;
+//        bruteForce(array,k);  // O(n2)
+//        prefixSum(array,k);     // O(nlogn)
+//        efficientSolutionUsingHashMap(array,k);
+
+
 
 
     }
