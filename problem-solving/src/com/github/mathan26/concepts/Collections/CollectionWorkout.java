@@ -18,11 +18,11 @@ public class CollectionWorkout {
         System.out.println(arrayList);
         Collections.reverse(arrayList);
         System.out.println(arrayList);
-        Collections.rotate(arrayList,4);
+        Collections.rotate(arrayList, 4);
         System.out.println(arrayList);
         Collections.sort(arrayList);
         System.out.println(arrayList);
-        Collections.swap(arrayList,0,1);
+        Collections.swap(arrayList, 0, 1);
         System.out.println(arrayList);
         Collections.shuffle(arrayList);
         System.out.println(arrayList);
@@ -39,11 +39,11 @@ public class CollectionWorkout {
         arrayList2.add(-5);
         arrayList2.add(7);
 
-        System.out.println("Collections.max() "+Collections.max(arrayList2));
-        System.out.println("Collections.min() "+Collections.min(arrayList2));
-        System.out.println("Collections.replaceAll() "+Collections.replaceAll(arrayList2,-3,3));
-        System.out.println("Collections.frequency() "+Collections.frequency(arrayList2,-3));
-        System.out.println(Collections.indexOfSubList(arrayList,arrayList2));
-        System.out.println(Collections.binarySearch(arrayList,7));
+        System.out.println("Collections.max() " + Collections.max(arrayList2));
+        System.out.println("Collections.min() " + Collections.min(arrayList2));
+        System.out.println("Collections.replaceAll() " + Collections.replaceAll(arrayList2, -3, 3));
+        System.out.println("Collections.frequency() " + Collections.frequency(arrayList2, -3));
+        System.out.println(Collections.indexOfSubList(arrayList, arrayList2));
+        System.out.println(Collections.binarySearch(arrayList, 7));
     }
 }

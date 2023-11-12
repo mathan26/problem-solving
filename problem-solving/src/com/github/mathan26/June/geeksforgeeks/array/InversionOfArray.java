@@ -4,20 +4,20 @@ import java.util.Arrays;
 
 public class InversionOfArray {
     public static void main(String[] args) {
-        int[] arr = { 1, 3, 5, 2, 4, 6 };
+        int[] arr = {1, 3, 5, 2, 4, 6};
 
         System.out.println(mergeSortAndCount(arr, 0, arr.length - 1));
     }
 
     private static int mergeSortAndCount(int[] arr, int l, int r) {
-            int count = 0;
-            if(l<r){
-                int m=(l+r)/2;
-                count +=mergeSortAndCount(arr,l,m);
-                count +=mergeSortAndCount(arr,m+1,r);
-                count +=mergeAndCount(arr,l,m,r);
-            }
-            return count;
+        int count = 0;
+        if (l < r) {
+            int m = (l + r) / 2;
+            count += mergeSortAndCount(arr, l, m);
+            count += mergeSortAndCount(arr, m + 1, r);
+            count += mergeAndCount(arr, l, m, r);
+        }
+        return count;
     }
 
     private static int mergeAndCount(int[] arr, int l, int m, int r) {

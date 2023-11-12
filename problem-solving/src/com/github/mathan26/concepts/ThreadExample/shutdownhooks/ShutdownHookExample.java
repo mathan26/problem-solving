@@ -1,6 +1,5 @@
 package com.github.mathan26.concepts.ThreadExample.shutdownhooks;
 
-import org.omg.SendingContext.RunTime;
 
 public class ShutdownHookExample {
     public static void main(String[] args) {
@@ -18,8 +17,8 @@ public class ShutdownHookExample {
     }
 }
 
-class ThreadA extends Thread{
-    public void run(){
+class ThreadA extends Thread {
+    public void run() {
         System.out.println("########################");
         System.out.println("addShutdownHook called! ");
         System.out.println("Doing Clean up process!!!!");

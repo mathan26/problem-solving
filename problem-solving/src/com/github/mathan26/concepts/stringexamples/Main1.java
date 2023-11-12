@@ -10,13 +10,13 @@ public class Main1 {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("Mathan");
         stringBuffer.insert(6, "Kumar");
-        System.out.println("StringBuffer used:  "+stringBuffer);
+        System.out.println("StringBuffer used:  " + stringBuffer);
 
         String obj1 = new String("Mathan");
-        obj1="Mathankumar";
+        obj1 = "Mathankumar";
 
         Currency india = Currency.of("Rupee");
-        Money money = new Money(1000,india);
+        Money money = new Money(1000, india);
         money.getAmount();
         money.getCurrency().getValue();
 
@@ -26,9 +26,9 @@ public class Main1 {
 
 
         char[] c = new char[26];
-        c[1]='b'-'a';
-        String s=String.valueOf(c);
-        System.out.println('b'-'a');
-        System.out.println("String.valueOf(c) "+s);
+        c[1] = 'b' - 'a';
+        String s = String.valueOf(c);
+        System.out.println('b' - 'a');
+        System.out.println("String.valueOf(c) " + s);
     }
 }

@@ -15,7 +15,7 @@ public class PriorityQueueExample {
         System.out.println(priorityQueue.poll());
 
 
-        PriorityQueue<Integer> priorityQueue2 = new PriorityQueue<>(10,(a,b)->b-a);
+        PriorityQueue<Integer> priorityQueue2 = new PriorityQueue<>(10, (a, b) -> b - a);
         priorityQueue2.add(100);
         priorityQueue2.add(10);
         priorityQueue2.add(20);

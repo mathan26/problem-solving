@@ -4,7 +4,6 @@ package com.github.mathan26.concepts.array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Intro {
@@ -15,7 +14,7 @@ public class Intro {
         int[] array;
 
 //      set values to the array directly when creating it:
-        int[] anArray = new int[] {1, 2, 3, 4, 5};
+        int[] anArray = new int[]{1, 2, 3, 4, 5};
 
 //      accessing and setting the element
         anArray[0] = 10;
@@ -27,7 +26,7 @@ public class Intro {
         }
 
 //        foreach
-        for (int element:anArray) {
+        for (int element : anArray) {
             System.out.println(element);
         }
 
@@ -44,21 +43,21 @@ public class Intro {
         // another way,with some restrictions
         // 1. It's not possible to use an array of primitive types
         // 2. We can't add or remove elements from the created list, as it'll throw an UnsupportedOperationException
-        Integer[] anArray2 = new Integer[] {1, 2, 3, 4, 5};
+        Integer[] anArray2 = new Integer[]{1, 2, 3, 4, 5};
         List<Integer> aList2 = Arrays.asList(anArray2);
 
 //        From an Array to a Stream
-        String[] anArray4 = new String[] {"Milk", "Tomato", "Chips"};
+        String[] anArray4 = new String[]{"Milk", "Tomato", "Chips"};
         Stream<String> aStream = Arrays.stream(anArray4);
         // subset also possible
         Stream<String> anotherStream = Arrays.stream(anArray4, 1, 3);
 
 //        Searching in an Array
-        int index = Arrays.binarySearch(anArray,3);
+        int index = Arrays.binarySearch(anArray, 3);
 
 //        Concatenating Arrays
-        int[] anArray3 = new int[] {5, 2, 1, 4, 8};
-        int[] anotherArray = new int[] {10, 4, 9, 11, 2};
+        int[] anArray3 = new int[]{5, 2, 1, 4, 8};
+        int[] anotherArray = new int[]{10, 4, 9, 11, 2};
         int[] resultArray = new int[anArray3.length + anotherArray.length];
 
 //        int[] resultArray = new int[anArray3.length + anotherArray.length];

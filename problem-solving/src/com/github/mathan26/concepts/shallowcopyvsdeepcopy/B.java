@@ -5,6 +5,11 @@ public class B implements Cloneable {
     private A objectA;
 
 
+    public B(int empId, A objectA) {
+        this.empId = empId;
+        this.objectA = objectA;
+    }
+
     public int getEmpId() {
         return empId;
     }
@@ -14,15 +19,9 @@ public class B implements Cloneable {
     }
 
     protected Object clone() throws CloneNotSupportedException {
-        B b = (B)super.clone();
-        b.objectA=(A)objectA.clone();
+        B b = (B) super.clone();
+        b.objectA = (A) objectA.clone();
 //        return super.clone();    // shallow clone
         return b; //deep clone
-    }
-
-
-    public B(int empId, A objectA) {
-        this.empId = empId;
-        this.objectA = objectA;
     }
 }

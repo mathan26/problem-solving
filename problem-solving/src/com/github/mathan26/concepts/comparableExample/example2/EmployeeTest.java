@@ -1,22 +1,25 @@
 package com.github.mathan26.concepts.comparableExample.example2;
 
-import java.util.List;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Test class to test sorting of Employee object on different parameters.
  * each test method will test each Comparator implementation.
+ *
  * @author http://javarevisited.blogpot.com
  */
 public class EmployeeTest {
 
 
     @Test
-    public void testEmployeeSorting(){
+    public void testEmployeeSorting() {
         Employee e1 = new Employee(1, "A", 1000, 32, new Date(2011, 10, 1));
         Employee e2 = new Employee(2, "AB", 1300, 22, new Date(2012, 10, 1));
         Employee e3 = new Employee(3, "B", 10, 42, new Date(2010, 11, 3));

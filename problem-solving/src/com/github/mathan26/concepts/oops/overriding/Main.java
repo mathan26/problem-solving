@@ -2,7 +2,7 @@ package com.github.mathan26.concepts.oops.overriding;
 
 public class Main {
     public static void main(String[] args) {
-        Parent parent= new Parent();
+        Parent parent = new Parent();
 //        parent.m1();    Cannot access since  it is private
         Child child = new Child();
 //        child.m1();     Cannot call

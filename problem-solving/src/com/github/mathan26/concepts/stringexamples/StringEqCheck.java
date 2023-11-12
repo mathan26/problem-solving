@@ -2,7 +2,7 @@ package com.github.mathan26.concepts.stringexamples;
 
 public class StringEqCheck {
     public static void main(String[] args) {
-        String name= "Mathan";
+        String name = "Mathan";
         String name2 = "Mathan";
         System.out.println(name == name2);
         String name3 = new String("Mathan");

@@ -23,15 +23,14 @@ public class Fibo {
 */
 
 
- //0 1 1 2 3 5
+//0 1 1 2 3 5
 // Dynamic Programming approach for
 // Fibonacci Series
 
 public class Fibo {
 
     // Function to find the fibonacci Series
-    static int fib(int n)
-    {
+    static int fib(int n) {
 
         // Declare an array to store
         // Fibonacci numbers.
@@ -56,15 +55,7 @@ public class Fibo {
         return f[n];
     }
 
-    public void display(String user){
-
-    }
-    public void display(int Rolno){
-
-    }
-
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         // Given Number N
         int N = 10;
 
@@ -72,7 +63,15 @@ public class Fibo {
         for (int i = 0; i < N; i++)
             System.out.print(fib(i) + " ");
 
-        Fibo  obj = new Fibo();
+        Fibo obj = new Fibo();
         //obj.display(new Fibo());
+    }
+
+    public void display(String user) {
+
+    }
+
+    public void display(int Rolno) {
+
     }
 }

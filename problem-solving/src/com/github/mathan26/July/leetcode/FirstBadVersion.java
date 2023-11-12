@@ -1,7 +1,5 @@
 package com.github.mathan26.July.leetcode;
 
-import javax.xml.transform.sax.SAXSource;
-
 public class FirstBadVersion {
     public static void main(String[] args) {
         System.out.println(firstBadVersion(5));
@@ -22,6 +20,6 @@ public class FirstBadVersion {
     }
 
     private static boolean isBadVersion(int version) {
-       return version==3;
+        return version == 3;
     }
 }

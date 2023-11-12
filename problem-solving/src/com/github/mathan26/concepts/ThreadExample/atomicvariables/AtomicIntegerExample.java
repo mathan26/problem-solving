@@ -10,7 +10,7 @@ public class AtomicIntegerExample {
 
         AtomicCounter atomicCounter = new AtomicCounter();
 
-        for(int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             executorService.submit(() -> atomicCounter.incrementAndGet());
         }
 

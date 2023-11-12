@@ -1,6 +1,10 @@
 package com.github.mathan26.concepts.ThreadExample.FutureAndCallableExample;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class FutureAndCallableExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException, ExecutionException {
@@ -15,7 +19,7 @@ public class FutureAndCallableExample {
 
         System.out.println("Submitting Callable");
         Future<String> future = executorService.submit(callable); //Future is just like that promise
-                                                                  //It hold the result of callable
+        //It hold the result of callable
         // This line executes immediately
         System.out.println("Do something else while callable is getting executed");
 

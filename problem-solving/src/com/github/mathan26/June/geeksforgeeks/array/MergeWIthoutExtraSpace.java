@@ -3,7 +3,6 @@ package com.github.mathan26.June.geeksforgeeks.array;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class MergeWIthoutExtraSpace {
     public static void main(String[] args) throws IOException {
@@ -26,38 +25,38 @@ public class MergeWIthoutExtraSpace {
 
             merge(arr1, arr2, n, m);
             StringBuffer str = new StringBuffer();
-            for(int i=0; i<n; i++){
-                str.append(arr1[i]+" ");
+            for (int i = 0; i < n; i++) {
+                str.append(arr1[i] + " ");
             }
-            for(int i=0; i<m; i++){
-                str.append(arr2[i]+" ");
+            for (int i = 0; i < m; i++) {
+                str.append(arr2[i] + " ");
             }
             System.out.println(str);
         }
     }
 
     private static void merge(int[] arr1, int[] arr2, int n, int m) {
-        int gap=n+m;
-        int i, tmp,j;
-        for(gap=nextGap(gap);gap>0;gap=nextGap(gap)){
-            for(i=0;i + gap <n;i++){
-                if(arr1[i] > arr1[i+gap]){
-                    tmp=arr1[i];
-                    arr1[i]=arr1[i+gap];
-                    arr1[i+gap]=tmp;
+        int gap = n + m;
+        int i, tmp, j;
+        for (gap = nextGap(gap); gap > 0; gap = nextGap(gap)) {
+            for (i = 0; i + gap < n; i++) {
+                if (arr1[i] > arr1[i + gap]) {
+                    tmp = arr1[i];
+                    arr1[i] = arr1[i + gap];
+                    arr1[i + gap] = tmp;
                 }
             }
-            for(j = gap > n ? gap-n : 0 ; i < n && j < m; i++, j++){
-                if(arr1[i] > arr2[j]){
+            for (j = gap > n ? gap - n : 0; i < n && j < m; i++, j++) {
+                if (arr1[i] > arr2[j]) {
                     tmp = arr1[i];
                     arr1[i] = arr2[j];
                     arr2[j] = tmp;
                 }
             }
 
-            if(j < m) {
-                for (j = 0; j + gap < m; j++){
-                    if(arr2[j] > arr2[j + gap]){
+            if (j < m) {
+                for (j = 0; j + gap < m; j++) {
+                    if (arr2[j] > arr2[j + gap]) {
                         tmp = arr2[j];
                         arr2[j] = arr2[j + gap];
                         arr2[j + gap] = tmp;
@@ -68,10 +67,10 @@ public class MergeWIthoutExtraSpace {
     }
 
     private static int nextGap(int gap) {
-        if(gap<=1){
+        if (gap <= 1) {
             return 0;
-        }else {
-            return (gap/2) + (gap%2);
+        } else {
+            return (gap / 2) + (gap % 2);
         }
     }
 

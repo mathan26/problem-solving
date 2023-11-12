@@ -1,16 +1,6 @@
 package com.github.mathan26.concepts.ThreadExample.creation;
 
 public class MyThread extends Thread {
-    public void run(){
-
-        System.out.println("running thread name is:"+Thread.currentThread().getName());
-        System.out.println("running thread priority is:"+Thread.currentThread().getPriority());
-        /*System.out.println(this.getName());
-         for(int i=0;i<10;i++){*/
-        //System.out.println("Child Thread");
-      //}
-    }
-
     public static void main(String[] args) {
 
         MyThread t = new MyThread();
@@ -32,6 +22,16 @@ public class MyThread extends Thread {
        /* for(int i=0;i<10;i++){
        //     System.out.println("Main Thread");    AFTER COMMENTING ONLY THREAD PRIORITY EXECUTES AS MENTIONED
         }*/
+    }
+
+    public void run() {
+
+        System.out.println("running thread name is:" + Thread.currentThread().getName());
+        System.out.println("running thread priority is:" + Thread.currentThread().getPriority());
+        /*System.out.println(this.getName());
+         for(int i=0;i<10;i++){*/
+        //System.out.println("Child Thread");
+        //}
     }
 }
 

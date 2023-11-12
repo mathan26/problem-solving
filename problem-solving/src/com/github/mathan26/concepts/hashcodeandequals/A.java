@@ -11,9 +11,9 @@ public class A {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj)
+        if (this == obj)
             return true;
-        if(obj == null || obj.getClass()!= this.getClass())
+        if (obj == null || obj.getClass() != this.getClass())
             return false;
         // type casting of the argument.
         A geek = (A) obj;
@@ -22,6 +22,6 @@ public class A {
 
     @Override
     public int hashCode() {
-        return  this.id;
+        return this.id;
     }
 }

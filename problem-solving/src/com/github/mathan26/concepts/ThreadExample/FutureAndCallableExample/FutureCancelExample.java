@@ -15,12 +15,12 @@ public class FutureCancelExample {
             return "Hello from Callable";
         });
 
-        while(!future.isDone()) {
+        while (!future.isDone()) {
             System.out.println("Task is still not done...");
             Thread.sleep(200);
-            double elapsedTimeInSec = (System.nanoTime() - startTime)/1000000000.0;
+            double elapsedTimeInSec = (System.nanoTime() - startTime) / 1000000000.0;
 
-            if(elapsedTimeInSec > 1) {
+            if (elapsedTimeInSec > 1) {
                 future.cancel(true);
             }
         }
@@ -28,7 +28,7 @@ public class FutureCancelExample {
         System.out.println("Task completed! Retrieving the result");
         //String result = future.get(); // IT WILL THROW EXCEPTION
 
-        if(!future.isCancelled()) {
+        if (!future.isCancelled()) {
             System.out.println("Task completed! Retrieving the result");
             String result = future.get();
             System.out.println(result);

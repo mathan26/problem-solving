@@ -8,9 +8,9 @@ public class QueueImpl {
     int[] array;
 
     public QueueImpl(int capacity) {
-        this.capacity=capacity;
-        this.front = this.size=0;
-        this.rear = capacity-1;
+        this.capacity = capacity;
+        this.front = this.size = 0;
+        this.rear = capacity - 1;
         this.array = new int[capacity];
     }
 
@@ -21,9 +21,9 @@ public class QueueImpl {
         queue.enqueue(20);
         queue.enqueue(30);
 
-        System.out.println(queue.dequeue() +" dequeued from Queue");
-        System.out.println("Front Item is: "+queue.front());
-        System.out.println("Rear Item is: "+queue.rear());
+        System.out.println(queue.dequeue() + " dequeued from Queue");
+        System.out.println("Front Item is: " + queue.front());
+        System.out.println("Rear Item is: " + queue.rear());
     }
 
     private int rear() {
@@ -39,29 +39,29 @@ public class QueueImpl {
     }
 
     private int dequeue() {
-        if(isEmpty(this))
+        if (isEmpty(this))
             return Integer.MIN_VALUE;
-        int item=this.array[this.front];
-        this.front=(this.front+1)%capacity;
-        this.size -=1;
+        int item = this.array[this.front];
+        this.front = (this.front + 1) % capacity;
+        this.size -= 1;
         return item;
     }
 
     private boolean isEmpty(QueueImpl queue) {
-        return queue.size==0;
+        return queue.size == 0;
     }
 
     private void enqueue(int element) {
-        if(isFull(this))
+        if (isFull(this))
             return;
-        this.rear=(rear+1)%capacity;
-        this.array[this.rear]=element;
-        this.size +=1;
-        System.out.println(element+" enqueued to queue.");
+        this.rear = (rear + 1) % capacity;
+        this.array[this.rear] = element;
+        this.size += 1;
+        System.out.println(element + " enqueued to queue.");
 
     }
 
     private boolean isFull(QueueImpl queue) {
-        return  queue.size==capacity;
+        return queue.size == capacity;
     }
 }

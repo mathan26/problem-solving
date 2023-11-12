@@ -7,11 +7,11 @@ public final class Currency {
         value = currencyValue;
     }
 
-    public String getValue() {
-        return value;
-    }
-
     public static Currency of(String value) {
         return new Currency(value);
+    }
+
+    public String getValue() {
+        return value;
     }
 }

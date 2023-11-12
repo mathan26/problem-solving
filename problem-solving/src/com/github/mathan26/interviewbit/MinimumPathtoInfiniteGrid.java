@@ -2,32 +2,24 @@ package com.github.mathan26.interviewbit;
 // Java program to cover a
 // sequence of points in
 // minimum steps in a given order.
-import java.io.*;
-import java.util.*;
-import java.lang.*;
-
-
 
 // class denoted as point
-class point
-{
+class point {
     int x, y;
-    point(int a, int b)
-    {
+
+    point(int a, int b) {
         x = a;
         y = b;
 
     }
 }
 
-public class MinimumPathtoInfiniteGrid
-{
+public class MinimumPathtoInfiniteGrid {
     // function to give minimum
 // steps to move from point
 // p1 to p2
     static int shortestPath(point p1,
-                            point p2)
-    {
+                            point p2) {
         // dx is total horizontal
         // distance to be covered
         int dx = Math.abs(p1.x - p2.x);
@@ -44,15 +36,13 @@ public class MinimumPathtoInfiniteGrid
     // Function to return
 // the minimum steps
     static int coverPoints(point sequence[],
-                           int size)
-    {
+                           int size) {
         int stepCount = 0;
 
         // finding steps for
         // each consecutive
         // point in the sequence
-        for (int i = 0; i < size - 1; i++)
-        {
+        for (int i = 0; i < size - 1; i++) {
             stepCount += shortestPath(sequence[i],
                     sequence[i + 1]);
         }
@@ -61,8 +51,7 @@ public class MinimumPathtoInfiniteGrid
     }
 
     // Driver code
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         // arr stores sequence of points
         // that are to be visited
         point arr[] = new point[4];

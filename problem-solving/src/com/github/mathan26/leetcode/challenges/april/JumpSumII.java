@@ -3,7 +3,7 @@ package com.github.mathan26.leetcode.challenges.april;
 
 /**
  * Approach : Peak valley
- *
+ * <p>
  * 1. Check the maximum jump from the current Index
  * 2. Keep track it in the variable
  * 3. In case iteration is greater than the tracking variable then we cannot reach the end
@@ -11,14 +11,14 @@ package com.github.mathan26.leetcode.challenges.april;
  */
 public class JumpSumII {
     public boolean canJump(int[] nums) {
-        int size=nums.length;
+        int size = nums.length;
 
-        int reachable=0;
+        int reachable = 0;
 
-        for(int i=0;i<size;i++){
-            if(reachable<i)  // Exit condition
+        for (int i = 0; i < size; i++) {
+            if (reachable < i)  // Exit condition
                 return false;
-            reachable =Math.max(reachable, i + nums[i]); // check with the max and store it
+            reachable = Math.max(reachable, i + nums[i]); // check with the max and store it
         }
 
         return true;

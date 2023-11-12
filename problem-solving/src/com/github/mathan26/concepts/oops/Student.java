@@ -6,13 +6,14 @@ public class Student extends Person {
         super(name);
     }
 
-    Student(){
+    Student() {
         System.out.println("Empty constructor parent");
     }
+
     public static void main(String[] args) {
 
 
-        Student s  = new Student("Mathan");
+        Student s = new Student("Mathan");
         System.out.println(s.name);
 //        Person.display();
 //        s1.displayInstance();
@@ -20,7 +21,7 @@ public class Student extends Person {
 //        Student s2 = new Student();
     }
 
-    public final static void display(){
+    public final static void display() {
         System.out.println("From Abstract");
     }
 

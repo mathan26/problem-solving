@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class DuplicateZeros {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.duplicateZeros(new int[]{1,0,0});
+        solution.duplicateZeros(new int[]{1, 0, 0});
     }
 }
 

@@ -21,7 +21,7 @@ public class CountDownLatchExample {
 }
 
 
-class DependentService implements  Runnable{
+class DependentService implements Runnable {
     CountDownLatch countDownLatch;
 
     public DependentService(CountDownLatch countDownLatch) {
@@ -36,7 +36,7 @@ class DependentService implements  Runnable{
             e.printStackTrace();
         }
         countDownLatch.countDown();
-        System.out.println("Executing ..."+Thread.currentThread().getName());
+        System.out.println("Executing ..." + Thread.currentThread().getName());
 
     }
 }

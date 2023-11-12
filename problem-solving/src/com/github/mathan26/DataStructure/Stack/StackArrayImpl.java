@@ -2,10 +2,10 @@ package com.github.mathan26.DataStructure.Stack;
 
 public class StackArrayImpl {
     int[] arr;
-    int pos=0;
+    int pos = 0;
 
     public StackArrayImpl(int size) {
-        arr= new int[size];
+        arr = new int[size];
     }
 
     public static void main(String[] args) {
@@ -23,32 +23,32 @@ public class StackArrayImpl {
         obj.push(3);
 
         obj.peek();
-        while (!obj.isEmpty()){
+        while (!obj.isEmpty()) {
             obj.pop();
         }
     }
 
     private void peek() {
-        if(!isEmpty())
-            System.out.println(arr[pos-1]);
+        if (!isEmpty())
+            System.out.println(arr[pos - 1]);
     }
 
     private boolean isEmpty() {
-        return pos==0;
+        return pos == 0;
     }
 
     private void pop() {
-        if(pos<-1){
+        if (pos < -1) {
             System.out.println("Underflow");
-        }else {
+        } else {
             System.out.println(arr[--pos]);
         }
     }
 
     private void push(int data) {
-        if(pos<arr.length){
-            arr[pos++]=data;
-        }else {
+        if (pos < arr.length) {
+            arr[pos++] = data;
+        } else {
             System.out.println("Overflow");
         }
     }

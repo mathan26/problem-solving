@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class SubArraySumWIthTestCase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int t=scanner.nextInt();
-        for(int i=0;i<t;i++){
-            int n=scanner.nextInt();
-            int sum=scanner.nextInt();
-            int[] arr=new int[n];
-            for(int k=0;k<n;k++){
-                arr[k] =scanner.nextInt();
+        int t = scanner.nextInt();
+        for (int i = 0; i < t; i++) {
+            int n = scanner.nextInt();
+            int sum = scanner.nextInt();
+            int[] arr = new int[n];
+            for (int k = 0; k < n; k++) {
+                arr[k] = scanner.nextInt();
             }
-            findSubArray(n,sum,arr);
+            findSubArray(n, sum, arr);
         }
     }
 

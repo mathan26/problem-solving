@@ -5,25 +5,17 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- *
  * @author
  */
-public class Employee implements Comparable<Employee>{
-    private int id;
-    private String name;
-    private int salary;
-    private int age;
-    private Date dateOfJoining;
-
-    public static final Comparator<Employee> AgeComparator = new Comparator<Employee>(){
+public class Employee implements Comparable<Employee> {
+    public static final Comparator<Employee> AgeComparator = new Comparator<Employee>() {
         @Override
         public int compare(Employee o1, Employee o2) {
             return o1.age - o2.age;  // This will work because age is positive integer
         }
 
     };
-
-    public static final Comparator<Employee> SalaryComparator = new Comparator<Employee>(){
+    public static final Comparator<Employee> SalaryComparator = new Comparator<Employee>() {
 
         @Override
         public int compare(Employee o1, Employee o2) {
@@ -31,8 +23,7 @@ public class Employee implements Comparable<Employee>{
         }
 
     };
-
-    public static final Comparator<Employee> NameComparator = new Comparator<Employee>(){
+    public static final Comparator<Employee> NameComparator = new Comparator<Employee>() {
 
         @Override
         public int compare(Employee o1, Employee o2) {
@@ -40,8 +31,7 @@ public class Employee implements Comparable<Employee>{
         }
 
     };
-
-    public static final Comparator<Employee> DOJComparator = new Comparator<Employee>(){
+    public static final Comparator<Employee> DOJComparator = new Comparator<Employee>() {
 
         @Override
         public int compare(Employee o1, Employee o2) {
@@ -49,6 +39,11 @@ public class Employee implements Comparable<Employee>{
         }
 
     };
+    private int id;
+    private String name;
+    private int salary;
+    private int age;
+    private Date dateOfJoining;
 
     public Employee(int id, String name, int salary, int age, Date dateOfJoining) {
         this.id = id;

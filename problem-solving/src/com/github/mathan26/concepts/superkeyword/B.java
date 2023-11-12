@@ -7,7 +7,7 @@ public class B extends A {
     }
 
     public static void main(String[] args) {
-        A obj  = new A(); // Parent Object creation, Child constructor not called
+        A obj = new A(); // Parent Object creation, Child constructor not called
         A obj1 = new B(); //Now called
     }
 }

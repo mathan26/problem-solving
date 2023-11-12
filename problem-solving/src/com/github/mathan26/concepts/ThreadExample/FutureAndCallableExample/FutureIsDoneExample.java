@@ -14,7 +14,7 @@ public class FutureIsDoneExample {
             return "Hello from Callable";
         });
 
-        while(!future.isDone()) {
+        while (!future.isDone()) {
             System.out.println("Task is still not done...");
             Thread.sleep(200);
         }

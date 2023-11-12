@@ -1,24 +1,22 @@
 package com.github.mathan26.DataStructure.LinkedList;
 
 
-
-class Llist{
+class Llist {
     Node head;
 
-     class Node{
+    class Node {
         Node next;
         int data;
-        Node(){
+
+        Node() {
 
         }
-        Node(int data){
+
+        Node(int data) {
             this.data = data;
         }
     }
 }
-
-
-
 
 
 public class FindtheLoopCount {
@@ -35,22 +33,22 @@ public class FindtheLoopCount {
         llist.head.next.next.next.next.next = llist.head.next;
 
         //find loop starting point use the Floyd's Algorithm
-        Llist.Node  loopStart = findStartNode(llist.head);
-        boolean isLoop = loopStart!=null ? true:false;
-        System.out.println("Is LinkedList is Loop : "+isLoop);
-        if(isLoop){
+        Llist.Node loopStart = findStartNode(llist.head);
+        boolean isLoop = loopStart != null ? true : false;
+        System.out.println("Is LinkedList is Loop : " + isLoop);
+        if (isLoop) {
             int result = countNodes(loopStart);
-            System.out.println("Loop Count "+result);
+            System.out.println("Loop Count " + result);
         }
 
     }
 
     private static int countNodes(Llist.Node loopStart) {
         Llist.Node temp = loopStart;
-        int count=1;
-        while (temp.next != loopStart){
+        int count = 1;
+        while (temp.next != loopStart) {
             temp = temp.next;
-            count ++;
+            count++;
         }
 
         return count;
@@ -58,16 +56,16 @@ public class FindtheLoopCount {
 
     private static Llist.Node findStartNode(Llist.Node head) {
         Llist.Node p = head;
-        Llist.Node q=head;
+        Llist.Node q = head;
 
-        while (p!=null && q!=null && q.next!=null){
+        while (p != null && q != null && q.next != null) {
             p = p.next;
             q = q.next.next;
 
-            if(p == q){
-                return  p;
+            if (p == q) {
+                return p;
             }
         }
-        return  null;
+        return null;
     }
 }

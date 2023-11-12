@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class SubArraySolution {
     public static void main(String[] args) {
-        Scanner input =new Scanner(System.in);
-        int t=input.nextInt();
+        Scanner input = new Scanner(System.in);
+        int t = input.nextInt();
 
-        for(int i=0;i<t;i++){
-            int n=input.nextInt();
-            int sum=input.nextInt();
+        for (int i = 0; i < t; i++) {
+            int n = input.nextInt();
+            int sum = input.nextInt();
 
-            int[] arr=new int[n];
+            int[] arr = new int[n];
 
-            for (int k=0;k<n;k++){
+            for (int k = 0; k < n; k++) {
                 arr[k] = input.nextInt();
             }
 
@@ -23,35 +23,35 @@ public class SubArraySolution {
 
     private static void findSubArray(int n, int sum, int[] arr) {
 
-        long result=arr[0];
-        int first=0;
-        int last=0;
-        while (result!=sum){
-            if(result>sum){
-                if(first==last){
+        long result = arr[0];
+        int first = 0;
+        int last = 0;
+        while (result != sum) {
+            if (result > sum) {
+                if (first == last) {
                     first++;
                     last++;
-                    if(last>=n) {
+                    if (last >= n) {
                         break;
                     }
-                    result=arr[first];
-                }else {
-                    result -=arr[first];
+                    result = arr[first];
+                } else {
+                    result -= arr[first];
                     first++;
                 }
-            }else {
+            } else {
                 last++;
-                if(last>=n){
+                if (last >= n) {
                     break;
-                }else {
-                    result +=arr[last];
+                } else {
+                    result += arr[last];
                 }
             }
         }
-        if(result!=sum){
+        if (result != sum) {
             System.out.println("-1");
-        }else {
-            System.out.println((first+1)+" "+(last+1));
+        } else {
+            System.out.println((first + 1) + " " + (last + 1));
         }
     }
 }

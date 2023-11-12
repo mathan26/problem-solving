@@ -3,7 +3,7 @@ package com.github.mathan26.concepts.oops;
 
 // Abstract class
 public abstract class Person {
-     String name;
+    String name;
 
     public Person() {
         System.out.println("Parent constructor called");
@@ -14,11 +14,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    protected static void display(){
+    protected static void display() {
         System.out.println("From Abstract");
     }
 
-    protected   void displayInstance(){
+    protected void displayInstance() {
         System.out.println("From Abstract");
     }
 }

@@ -1,4 +1,5 @@
 package com.github.mathan26.concepts.ThreadExample.Locks;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
@@ -19,7 +20,7 @@ class ReentrantLockMethodsCounter {
         boolean isAcquired = lock.tryLock();
         System.out.println("Lock Acquired : " + isAcquired + "\n");
 
-        if(isAcquired) {
+        if (isAcquired) {
             try {
                 Thread.sleep(2000);
                 count = count + 1;

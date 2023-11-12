@@ -6,6 +6,7 @@ public class A implements Cloneable {
     public A(String name) {
         this.name = name;
     }
+
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }

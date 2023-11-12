@@ -8,8 +8,7 @@ public class Main {
 
     }
 
-    public static boolean isStringOnlyAlphabetASCII(String str)
-    {
+    public static boolean isStringOnlyAlphabetASCII(String str) {
         if (str == null || str.equals("")) {
             return false;
         }
@@ -25,6 +24,6 @@ public class Main {
 
     private static boolean isStringOnlyAlphabet(String s) {
         s.matches("");
-        return ( !s.equals("") && s!=null && s.chars().allMatch(Character::isLetter) );
+        return (!s.equals("") && s != null && s.chars().allMatch(Character::isLetter));
     }
 }

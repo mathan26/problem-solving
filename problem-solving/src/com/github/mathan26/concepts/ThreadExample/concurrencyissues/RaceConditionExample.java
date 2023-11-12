@@ -10,7 +10,7 @@ public class RaceConditionExample {
 
         Counter counter = new Counter();
 
-        for(int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             executorService.submit(() -> counter.increment()); //Thread interference errors
         }
 

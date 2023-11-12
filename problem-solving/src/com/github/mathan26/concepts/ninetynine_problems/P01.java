@@ -8,8 +8,8 @@ import java.util.List;
  * Check P01Test class for test cases related to this problem.
  */
 public class P01 {
-    public static <T> T last(List<T> elements){
+    public static <T> T last(List<T> elements) {
         int numberOfElements = elements.size();
-        return elements.get(numberOfElements -1);
+        return elements.get(numberOfElements - 1);
     }
 }

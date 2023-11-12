@@ -1,7 +1,5 @@
 package com.github.mathan26.concepts.basics;
 
-import java.util.Objects;
-
 public class Key {
     String key;
 
@@ -10,14 +8,14 @@ public class Key {
     }
 
     @Override
-    public boolean equals(Object o){
-        return key.equals(((Key)o).key);
+    public boolean equals(Object o) {
+        return key.equals(((Key) o).key);
     }
 
     @Override
     public int hashCode() {
         int hash = (int) key.charAt(0);
-        System.out.println("Hashcode for the key "+hash);
+        System.out.println("Hashcode for the key " + hash);
         return hash;
     }
 }

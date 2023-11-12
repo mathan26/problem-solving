@@ -6,12 +6,12 @@ public class MemoryConsistencyErrorExample {
     public static void main(String[] args) throws InterruptedException {
 
         Thread thread = new Thread(() -> {
-            while(!sayHello) {
+            while (!sayHello) {
             }
 
             System.out.println("Hello World!");
 
-            while(sayHello) {
+            while (sayHello) {
             }
 
             System.out.println("Good Bye!");

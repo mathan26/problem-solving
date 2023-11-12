@@ -2,7 +2,6 @@ package com.github.mathan26.concepts.java8;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Book {
@@ -14,6 +13,10 @@ public class Book {
         this.name = name;
         this.releaseYear = releaseYear;
         this.isbn = isbn;
+    }
+
+    public static Map<String, String> listToMap(List<Book> books) {
+        return books.stream().collect(Collectors.toMap(Book::getIsbn, Book::getName));
     }
 
     public String getName() {
@@ -38,9 +41,5 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-
-    public static Map<String, String> listToMap(List<Book> books){
-        return  books.stream().collect(Collectors.toMap(Book::getIsbn,Book::getName));
     }
 }

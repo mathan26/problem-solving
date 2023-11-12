@@ -11,36 +11,36 @@ public class CountTriplets {
         Scanner input = new Scanner(System.in);
         int t = input.nextInt();
 
-        for(int i=0; i<t; i++){
-            int n=input.nextInt();
+        for (int i = 0; i < t; i++) {
+            int n = input.nextInt();
             int[] arr = new int[n];
-            for(int k=0; k<n; k++){
+            for (int k = 0; k < n; k++) {
                 arr[k] = input.nextInt();
             }
-            findTriplets(n,arr);
+            findTriplets(n, arr);
         }
     }
 
     private static void findTriplets(int n, int[] arr) {
         Arrays.sort(arr);
 
-        int t=0;
-        for(int i=n-1; i>=0; i--){
-            int start=0;
-            int end=i-1;
-            while (start<end){
-                int sum=arr[start] + arr[end];
-                if(arr[i]==sum){
+        int t = 0;
+        for (int i = n - 1; i >= 0; i--) {
+            int start = 0;
+            int end = i - 1;
+            while (start < end) {
+                int sum = arr[start] + arr[end];
+                if (arr[i] == sum) {
                     t++;
                     start++;
                     end--;
-                }else if(arr[i]>sum){
+                } else if (arr[i] > sum) {
                     start++;
-                }else {
+                } else {
                     end--;
                 }
             }
         }
-        System.out.println(t!=0?t:-1);
+        System.out.println(t != 0 ? t : -1);
     }
 }

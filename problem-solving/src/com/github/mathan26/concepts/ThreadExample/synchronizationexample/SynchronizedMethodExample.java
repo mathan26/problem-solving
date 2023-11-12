@@ -17,13 +17,14 @@ class SynchronizedCounter {
         return count;
     }
 }
+
 public class SynchronizedMethodExample {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
         SynchronizedCounter synchronizedCounter = new SynchronizedCounter();
 
-        for(int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             executorService.submit(() -> synchronizedCounter.increment());
         }
 
